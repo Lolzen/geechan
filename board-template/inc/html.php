@@ -514,13 +514,13 @@ EOF;
 	<body>
 		<div class="board-link-bar">
 		    <small>
-		    	[<a class="boards-link" href="../b">
+		    	[<a class="boards-link" href="$reflink/geechan/b/">
 			    	b
 			    </a> /
-			    <a class="boards-link" href="../g">
+			    <a class="boards-link" href="$reflink/geechan/g/">
 		    		g
 		    	</a> /
-		    	<a class="boards-link" href="../wow">
+		    	<a class="boards-link" href="$reflink/geechan/wow/">
 			    	wow
 		    	</a>]
 			</small>
