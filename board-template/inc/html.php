@@ -514,7 +514,10 @@ EOF;
 	<body>
 		<div class="board-link-bar">
 		    <small>
-		    	[<a class="boards-link" href="$reflink/geechan/b/">
+				[<a class="boards-link" href="$reflink/geechan/a/">
+			    	a
+			    </a> /
+		    	<a class="boards-link" href="$reflink/geechan/b/">
 			    	b
 			    </a> /
 			    <a class="boards-link" href="$reflink/geechan/g/">
