@@ -1,0 +1,158 @@
+/* Site index */
+body, html {
+    height: 100%;
+    background: linear-gradient(#FFCCAA, #FFFFEE);
+    background-size: 100%;
+	margin: 0 0 -20px 0;
+}
+.index-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+}
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100%;
+    margin: 0 0 auto 0;
+}
+.index-footer {
+    height: 100px;
+    width: 100%;
+    margin: 14px 0 0;
+
+    background-color: #CCCCCC;
+}
+.logo {
+    display: block;
+    width: 50%;
+    min-width: 200px;
+    margin: 14px auto 0;
+    
+    background-color: #CCCCCC;
+    height: 250px;
+}
+.boards {
+    min-width: 50%;
+    max-width: 50%;
+    margin: 14px auto 0;
+
+    border: 1px solid #000000;
+    background-color: #fff;
+    font-size: 13px;
+}
+.about {
+    min-width: 50%;
+    max-width: 50%;
+    margin: 14px auto 0;
+
+    border: 1px solid #000000;
+    background-color: #fff;
+    font-size: 13px;
+}
+.about-content {
+    padding: 4px;
+}
+.about-header {
+    background-color: #800;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 4px;
+}
+.boards-content {
+    display: flex;
+    justify-content: space-around;
+}
+.boards-header {
+    background-color: #fca;
+    color: #800;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 4px;
+}
+.boards-column {
+    display: inline-block;
+    margin: 4px;
+}
+.boards-category {
+    font-weight: bold;
+}
+.boards-list {
+    list-style-type: none;
+}
+/* All the possible states of the board links */
+.boards-link {
+    text-decoration: none;
+}
+.boards-link:link {
+}
+.boards-link:visited {
+}
+.boards-link:hover {
+    text-decoration: underline;
+}
+.boards-link:active {
+}
+
+/* Add */
+.banner {
+    display: block;
+    width: 50%;
+    margin: 14px 25% 0;
+    
+    background-color: #CCCCCC;
+    height: 100px;
+}
+.form {
+    min-width: 200px;
+    max-width: 380px;
+    margin: 14px auto 0;
+
+    border: 2px solid #BBBBBB;
+}
+.form-header {
+    margin: 0 0 14px;
+
+    background-color: #BBBBBB;
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    min-width: 172px;
+    width: calc(100% - 28px);
+    max-width: 352px;
+    margin: 0 14px;
+}
+.form-label {
+    display: block;
+    min-width: 70px;
+}
+.board-form-label {
+    display: block;
+    min-width: 84px;
+}
+.form-input {
+    min-width: 102px;
+    width: 100%;
+    max-width: 282px;
+}
+.form-input[id="content"] {
+    resize: vertical;
+}
+.form-input[type="checkbox"] {
+    margin: auto;
+    margin-left: 2px;
+    min-width: 13px;
+    width: 13px;
+    height: 13px;
+}
+.form-input[type="submit"] {
+    min-width: 100px;
+    width: 100px;
+    max-width: 100px;
+    margin: 14px calc(50% - 50px);
+}
