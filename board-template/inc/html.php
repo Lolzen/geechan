@@ -515,6 +515,19 @@ EOF;
 
 	$body = <<<EOF
 	<body>
+		<div class="board-link-bar">
+		    <small>
+		    	[<a class="boards-link" href="../b">
+			    	b
+			    </a> /
+			    <a class="boards-link" href="../g">
+		    		g
+		    	</a> /
+		    	<a class="boards-link" href="../wow">
+			    	wow
+		    	</a>]
+			</small>
+	    </div>
 		<div class="adminbar">
 			[<a href="$managelink" style="text-decoration: underline;">Manage</a>]
 		</div>
