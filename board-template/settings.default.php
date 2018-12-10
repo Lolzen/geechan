@@ -15,7 +15,7 @@ define('TINYIB_MODPASS', '');         // Moderators only have access to delete (
 // Board description and behavior
 define('TINYIB_BOARD', 'b');          // Unique identifier for this board using only letters and numbers
 define('TINYIB_BOARDDESC', 'TinyIB'); // Displayed at the top of every page
-define('TINYIB_ALWAYSNOKO', false);   // Redirect to thread after posting
+define('TINYIB_ALWAYSNOKO', true);   // Redirect to thread after posting
 define('TINYIB_CAPTCHA', '');         // Reduce spam by requiring users to pass a CAPTCHA when posting: simple / recaptcha  (click Rebuild All in the management panel after enabling)  ['' to disable]
 define('TINYIB_REQMOD', '');          // Require moderation before displaying posts: files / all  (see README for instructions, only MySQL is supported)  ['' to disable]
 
@@ -31,7 +31,7 @@ $tinyib_hidefieldsop = array();       // Fields to hide when creating a new thre
 $tinyib_hidefields = array();         // Fields to hide when replying
 
 // Post control
-define('TINYIB_DELAY', 30);           // Delay (in seconds) between posts from the same IP address to help control flooding  [0 to disable]
+define('TINYIB_DELAY', 0);           // Delay (in seconds) between posts from the same IP address to help control flooding  [0 to disable]
 define('TINYIB_MAXTHREADS', 100);     // Oldest threads are discarded when the thread count passes this limit  [0 to disable]
 define('TINYIB_MAXREPLIES', 0);       // Maximum replies before a thread stops bumping  [0 to disable]
 
@@ -78,7 +78,7 @@ define('TINYIB_RECAPTCHA_SECRET', '');// Secret key
 // Database
 //   Recommended database modes from best to worst:
 //     pdo, mysqli, mysql, sqlite3, sqlite (deprecated), flatfile (only useful if you need portability or lack any kind of database)
-define('TINYIB_DBMODE', 'flatfile');  // Mode
+define('TINYIB_DBMODE', 'mysqli');  // Mode
 define('TINYIB_DBMIGRATE', false);    // Enable database migration tool  (see README for instructions)
 define('TINYIB_DBBANS', 'bans');      // Bans table name (use the same bans table across boards for global bans)
 define('TINYIB_DBPOSTS', TINYIB_BOARD . '_posts'); // Posts table name
