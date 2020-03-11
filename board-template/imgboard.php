@@ -575,3 +575,31 @@ if (!isset($_GET['delete']) && !isset($_GET['manage']) && (isset($_POST['name'])
 if ($redirect) {
 	echo '--&gt; --&gt; --&gt;<meta http-equiv="refresh" content="' . (isset($slow_redirect) ? '3' : '0') . ';url=' . (is_string($redirect) ? $redirect : TINYIB_INDEX) . '">';
 }
+
+$connect = mysqli_connect(TINYIB_DBHOST, TINYIB_DBUSERNAME, TINYIB_DBPASSWORD, TINYIB_DBNAME);
+$sql = "SELECT id, parent, timestamp, bumped, name, tripcode, email, nameblock, subject, message, file, file_hex, file_original, file_size, file_size_formatted, image_width, image_height, thumb, thumb_width, thumb_height, stickied, moderated FROM " . TINYIB_BOARD . '_posts';
+$result = mysqli_query($connect, $sql);
+
+$catalog_array = array();
+$threads_array = array();
+$threadNo_array = array();
+while($row = mysqli_fetch_assoc($result)) {
+	if($row["parent"] == 0) {
+		$catalog_array[] = array($row);
+		$threads_array[] = array("id" => $row["id"], "subject" => $row["subject"], "bumped"=> $row["bumped"]);
+		$threadNo_array[$row["id"]][] = $row;
+	} else {
+		array_push($threadNo_array[$row["parent"]], $row);
+	};
+}
+
+//catalog.json
+file_put_contents('catalog.json', json_encode($catalog_array));
+
+//threads.json
+file_put_contents('threads.json', json_encode($threads_array));
+
+//threadNo.json
+foreach($threads_array as $key) {
+	file_put_contents("res/" . $key["id"] . ".json", json_encode($threadNo_array[$key["id"]]));
+}
