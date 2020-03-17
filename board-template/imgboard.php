@@ -580,24 +580,36 @@ $connect = mysqli_connect(TINYIB_DBHOST, TINYIB_DBUSERNAME, TINYIB_DBPASSWORD, T
 $sql = "SELECT id, parent, timestamp, bumped, name, tripcode, email, nameblock, subject, message, file, file_hex, file_original, file_size, file_size_formatted, image_width, image_height, thumb, thumb_width, thumb_height, stickied, moderated FROM " . TINYIB_BOARD . '_posts';
 $result = mysqli_query($connect, $sql);
 
-$catalog_array = array();
-$threads_array = array();
+$catalog_array["threads"] = array();
+$threads_array["threads"] = array();
 $threadNo_array = array();
 while($row = mysqli_fetch_assoc($result)) {
 	if($row["parent"] == 0) {
-		$catalog_array[]["threads"] = array($row);
-		$threads_array[]["threads"] = array(array("id" => $row["id"], "subject" => $row["subject"], "bumped"=> $row["bumped"]));
+		array_push($catalog_array["threads"], $row);
+		array_push($threads_array["threads"], array("id" => $row["id"], "subject" => $row["subject"], "bumped"=> $row["bumped"]));
 		$threadNo_array[$row["id"]] = array("posts" => [$row]);
 	} else {
 		array_push($threadNo_array[$row["parent"]]["posts"], $row);
 	};
 }
 
+//sort arrays per timestamp
+function sortByLastPost($a, $b) {
+    return $a["bumped"] > $b["bumped"] ? -1 : 1;
+}
+
+usort($threads_array["threads"], "sortByLastPost"); 
+usort($catalog_array["threads"], "sortByLastPost"); 
+
+//keep the format
+$threads[] = $threads_array;
+$catalog[] = $catalog_array;
+
 //catalog.json
-file_put_contents('catalog.json', json_encode($catalog_array));
+file_put_contents('catalog.json', json_encode($catalog));
 
 //threads.json
-file_put_contents('threads.json', json_encode($threads_array));
+file_put_contents('threads.json', json_encode($threads));
 
 //threadNo.json
 foreach($threadNo_array as $key => $value) {
