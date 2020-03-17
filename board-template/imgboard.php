@@ -585,11 +585,11 @@ $threads_array = array();
 $threadNo_array = array();
 while($row = mysqli_fetch_assoc($result)) {
 	if($row["parent"] == 0) {
-		$catalog_array[] = array($row);
-		$threads_array[] = array("id" => $row["id"], "subject" => $row["subject"], "bumped"=> $row["bumped"]);
-		$threadNo_array[$row["id"]][] = $row;
+		$catalog_array[]["threads"] = array($row);
+		$threads_array[]["threads"] = array(array("id" => $row["id"], "subject" => $row["subject"], "bumped"=> $row["bumped"]));
+		$threadNo_array[$row["id"]] = array("posts" => [$row]);
 	} else {
-		array_push($threadNo_array[$row["parent"]], $row);
+		array_push($threadNo_array[$row["parent"]]["posts"], $row);
 	};
 }
 
@@ -600,6 +600,6 @@ file_put_contents('catalog.json', json_encode($catalog_array));
 file_put_contents('threads.json', json_encode($threads_array));
 
 //threadNo.json
-foreach($threads_array as $key) {
-	file_put_contents("res/" . $key["id"] . ".json", json_encode($threadNo_array[$key["id"]]));
+foreach($threadNo_array as $key => $value) {
+	file_put_contents("res/" . $key . ".json", json_encode($value));
 }
