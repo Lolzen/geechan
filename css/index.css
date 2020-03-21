@@ -1,9 +1,10 @@
 /* Site index */
 body, html {
     height: 100%;
-    background: linear-gradient(#FFCCAA, #FFFFEE);
-    background-size: 100%;
-	margin: 0 0 -20px 0;
+    background: linear-gradient(#FFCCAA, #FFFFEE 30%);
+    min-height: 100%;
+    margin: 0 0 -20px 0;
+    overflow: auto;
 }
 .index-content {
     display: flex;
@@ -35,15 +36,6 @@ body, html {
     background-color: #CCCCCC;
     height: 250px;
 }
-.boards {
-    min-width: 50%;
-    max-width: 50%;
-    margin: 14px auto 0;
-
-    border: 1px solid #000000;
-    background-color: #fff;
-    font-size: 13px;
-}
 .about {
     min-width: 50%;
     max-width: 50%;
@@ -62,6 +54,15 @@ body, html {
     font-size: 17px;
     font-weight: bold;
     padding: 4px;
+}
+.boards {
+    min-width: 50%;
+    max-width: 50%;
+    margin: 14px auto 0;
+
+    border: 1px solid #000000;
+    background-color: #fff;
+    font-size: 13px;
 }
 .boards-content {
     display: flex;
@@ -96,6 +97,39 @@ body, html {
     text-decoration: underline;
 }
 .boards-link:active {
+}
+
+.posts {
+    min-width: 50%;
+    max-width: 50%;
+    margin: 14px auto 0;
+
+    border: 1px solid #000000;
+    background-color: #fff;
+    font-size: 13px;
+}
+.posts-content {
+    display: flex;
+    justify-content: space-around;
+}
+.posts-header {
+    background-color: #fca;
+    color: #800;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 4px;
+}
+.posts-column {
+    display: inline-block;
+    margin: 4px;
+    overflow: hidden;
+}
+
+.latest_activity {
+    vertical-align: top;
+    position: relative;
+    max-height: 320px;
+    display: block;
 }
 
 /* Add */
