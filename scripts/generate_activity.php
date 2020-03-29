@@ -73,7 +73,7 @@
 			foreach($rows as $key => $val) {
 				foreach($times as $num => $timestamp) {
 					if ($key == "bumped" && $val == $timestamp) {
-						array_push($latest, array("boardflag" => "a", "board" => "Anime", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "file" => $rows->file, "bumped" => $rows->bumped));
+						array_push($latest, array("boardflag" => "a", "board" => "Anime", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "thumb" => $rows->thumb, "file" => $rows->file, "bumped" => $rows->bumped));
 					}
 				}
 			}
@@ -85,7 +85,7 @@
 			foreach($rows as $key => $val) {
 				foreach($times as $num => $timestamp) {
 					if ($key == "bumped" && $val == $timestamp) {
-						array_push($latest, array("boardflag" => "b", "board" => "Random", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "file" => $rows->file, "bumped" => $rows->bumped));
+						array_push($latest, array("boardflag" => "b", "board" => "Random", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "thumb" => $rows->thumb, "file" => $rows->file, "bumped" => $rows->bumped));
 					}
 				}
 			}
@@ -97,7 +97,7 @@
 			foreach($rows as $key => $val) {
 				foreach($times as $num => $timestamp) {
 					if ($key == "bumped" && $val == $timestamp) {
-						array_push($latest, array("boardflag" => "g", "board" => "Technology", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "file" => $rows->file, "bumped" => $rows->bumped));
+						array_push($latest, array("boardflag" => "g", "board" => "Technology", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "thumb" => $rows->thumb, "file" => $rows->file, "bumped" => $rows->bumped));
 					}
 				}
 			}
@@ -109,7 +109,7 @@
 			foreach($rows as $key => $val) {
 				foreach($times as $num => $timestamp) {
 					if ($key == "bumped" && $val == $timestamp) {
-						array_push($latest, array("boardflag" => "wow", "board" => "World of Warcraft", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "file" => $rows->file, "bumped" => $rows->bumped));
+						array_push($latest, array("boardflag" => "wow", "board" => "World of Warcraft", "id" => $rows->id, "message" => $rows->message, "subject" => $rows->subject, "thumb" => $rows->thumb, "file" => $rows->file, "bumped" => $rows->bumped));
 					}
 				}
 			}

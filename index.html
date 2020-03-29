@@ -16,7 +16,7 @@
 				for (var i = 0; i < 5; i++) {
 					var tr = $('<tr/>');
 
-					$(tr).append("<td rowspan=\"5\"><center><p style=\"text-align:block; width: 175px; color: #800;\"><b>" +  data[i].board + "</br></b></p><a href=\"" + data[i].boardflag + "/res/" +  data[i].id + ".html\"><img src=\"" + data[i].boardflag + "/thumb/" + data[i].file.split('.').shift() + "s." + data[i].file.split('.').pop() + "\" height=100 with=100/></img></a><p style=\"text-align:block; width: 175px; color: #800;\"><b>" + data[i].subject + "</b> " + data[i].message + "</p></center></td>");
+					$(tr).append("<td rowspan=\"5\"><center><p style=\"text-align:block; width: 175px; color: #800;\"><b>" +  data[i].board + "</br></b></p><a href=\"" + data[i].boardflag + "/res/" +  data[i].id + ".html\"><img src=\"" + data[i].boardflag + "/thumb/" + data[i].thumb + "\" height=100 with=100/></img></a><p style=\"text-align:block; width: 175px; color: #800;\"><b>" + data[i].subject + "</b> " + data[i].message + "</p></center></td>");
 					$('.latest_activity').append(tr);
 				}
 			});
